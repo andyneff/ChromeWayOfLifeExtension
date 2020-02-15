@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "My stuff",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.com/*",
+        "https://www.netflix.com/watch/*"
+      ],
+      "js": ["web.js"]
+    }
+  ],
+  "icons": {
+    "128": "the1within0.png"
+  },
+  "background": {
+    "scripts": [
+      "bg.js"
+    ]
+  },
+  "browser_action": {
+    "name": "Some name"
+  }
+}
