@@ -1,17 +1,29 @@
 {
   "manifest_version": 2,
-  "name": "My stuff",
-  "version": "1.0",
+  "name": "Andy's Mod",
+  "version": "0.0.1",
   "permissions": [
     "contextMenus"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.amazon.com/*",
-        "https://www.netflix.com/watch/*"
+        "https://www.amazon.com/*"
       ],
-      "js": ["web.js"]
+      "js": ["src/common_content.js", "src/amazon.js"]
+    },
+    {
+      "matches": [
+        "https://www.netflix.com/*"
+      ],
+      "js": ["src/common_content.js", "src/netflix.js"]
+    },
+    {
+      "matches": [
+        "https://*.stackexchange.com/*",
+        "https://*.stackoverflow.com/*"
+      ],
+      "js": ["src/common_content.js", "src/stack.js"]
     }
   ],
   "icons": {
@@ -19,7 +31,7 @@
   },
   "background": {
     "scripts": [
-      "bg.js"
+      "src/bg.js"
     ]
   },
   "browser_action": {
